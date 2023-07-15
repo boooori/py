@@ -1,17 +1,15 @@
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
+class Car :
+    def __init__(self, model, color):
+        self.model = model
+        self.color = color
 
-canvas_size = (200, 200)
-rect_area = [(0, 0), (100, 100)]
-line_cor =[(0, 200), (200, 0)]
-circle_area = [(100, 100), (200, 200)]
+    def info(self):
+        print("Model:",self.model, ",Color :", self.color)
 
-new_img = Image.new("RGB", canvas_size, "orange")
-draw_imgs = ImageDraw.Draw(new_img)
-draw_imgs.rectangle(rect_area,fill = "red",outline = "yellow")
-draw_imgs.line(line_cor,fill = "blue", width = 4)
-draw_imgs.ellipse(circle_area, fill = "green",outline = "red")
+class CarDrive(Car):
 
-new_img.show()
-new_img.save("imagedraw.jpg")
+    def info(self) :
+        print("The model of this car is %s." %self.model)
+        print("The color is %s." % self.color)
+bmw = CarDrive("BMW","white")
+bmw.info()

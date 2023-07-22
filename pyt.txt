@@ -1,0 +1,15 @@
+from tkinter import*
+
+def double_click(event):
+    index = listbox.curselection()
+    lbl['text'] = listbox.get(index[0])
+flower = ["rose", "lily","pansy","sunflower"]
+win = Tk()
+listbox = Listbox(win)
+lbl = Label(win, text = " ",bg = "pink",fg = "navy")
+for i in range(len(flower)) :
+    listbox.insert(i, flower[i])
+listbox.bind("<Double-Button-1>",double_click)
+lbl.pack()
+listbox.pack()
+win.mainloop()
